@@ -1,0 +1,103 @@
+
+@import url('https://fonts.cdnfonts.com/css/interior-finishing');
+/* Cursor mira */
+
+html, body {
+  height: 100%;       /* Asegura que el HTML y el body ocupen toda la altura disponible */
+  margin: 0;          /* Elimina cualquier margen por defecto */
+  padding: 0;         /* Elimina cualquier padding por defecto */
+  overflow-x: hidden; /* No permitir scroll horizontal */
+  overflow-y: auto;   /* Permitir scroll vertical */
+  cursor: crosshair;
+}
+
+
+/* src/styles/animation.css */
+.balloon {
+  position: absolute;
+  width: 180px;       /* +20px ancho */
+  height: 200px;      /* +20px alto */
+  bottom: -180px;     /* para que salga completamente fuera */
+  border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  user-select: none;
+  z-index: 10;
+}
+
+/* Animación */
+@keyframes rise {
+  0%   { bottom: -180px; opacity: 0; }
+  10%  { opacity: 1; }
+  100% { bottom: 100%; opacity: 0; }
+}
+.animate-rise {
+  animation: rise linear 6s infinite;
+}
+
+/* Cordón más largo */
+.balloon-string {
+  position: absolute;
+  bottom: -50px;      /* separa más del globo */
+  left: 50%;
+  width: 3px;
+  height: 80px;       /* +20px más largo */
+  background: #555;
+  transform: translateX(-50%);
+}
+
+/* src/styles/animation.css */
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+.bounce {
+  animation: bounce 2s infinite;
+}
+
+.welcome-title {
+  font-family: 'Autum Farmhouse', cursive;
+  font-size: 60px;
+  color: blueviolet;
+}
+
+.custom-btn {
+  background-color: rgb(158, 51, 229);
+  color: white;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  width: 90%; /* O usa 100% si estás dentro de un contenedor limitado */
+  max-width: 600px;
+  border: none;
+  border-radius: 8px;
+  transition: transform 0.2s ease-in-out;
+  animation: bounce 1s infinite;
+}
+
+.custom-btn:hover {
+  transform: scale(1.05);
+}
+
+@font-face {
+  font-family: 'Autum Farmhouse';
+  src: url('../Autum\ Farmhouse.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.summaryPage-container {
+  min-height: 100vh;   /* Asegura que la página tenga al menos la altura completa de la ventana */
+  overflow-y: auto;    /* Permite que la página haga scroll si el contenido excede la altura */
+}
