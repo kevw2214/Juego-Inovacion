@@ -1,4 +1,3 @@
-// src/pages/GamePage1.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Balloon from '../components/Balloon';
@@ -23,26 +22,24 @@ const GamePage1 = ({ usedBrands, setSelectedBrand }) => {
     navigate('/categories');
   };
 
-  // Preparamos datos de globos con posiciones base + jitter
   const available = brands.filter(b => !used.includes(b.id));
   const total = available.length;
   const balloons = available.map((b, idx) => {
     const base = ((idx + 1) / (total + 1)) * 100;
-    const jitter = (Math.random() - 0.5) * (100 / (total + 1)) * 0.6; 
-      // hasta ±60% de la separación
+    const jitter = (Math.random() - 0.5) * (100 / (total + 1)) * 0.6;
     const x = Math.min(95, Math.max(5, base + jitter));
 
     return {
       ...b,
       x,
-      delay: Math.random() * 2,            // 0–2s
-      duration: 5 + Math.random() * 3      // 5–8s
+      delay: Math.random() * 2,
+      duration: 5 + Math.random() * 3
     };
   });
 
   return (
     <div className="position-relative vh-100 bg-light">
-      <h2 className="text-center pt- fs-1">🎈 Elige una marca</h2>
+      <h2 className="text-center pt- fs-1">Elige una marca</h2>
 
       {balloons.map(b => (
         <Balloon

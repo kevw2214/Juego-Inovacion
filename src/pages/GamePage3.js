@@ -1,4 +1,3 @@
-// src/pages/GamePage3.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Balloon from '../components/Balloon';
@@ -28,7 +27,6 @@ const GamePage3 = ({ selectedBrand, selectedCategory, registerGroup }) => {
     navigate('/summary');
   };
 
-  // Prepara globos con posición base + jitter + delay + duración
   const available = list.filter((_, idx) => !used.includes(idx));
   const total = available.length;
   const balloons = available.map((cond, idx) => {
@@ -38,20 +36,20 @@ const GamePage3 = ({ selectedBrand, selectedCategory, registerGroup }) => {
     return {
       idx: list.findIndex((c) => c === cond),
       x,
-      delay: Math.random() * 2,           // 0–2s
-      duration: 5 + Math.random() * 3     // 5–8s
+      delay: Math.random() * 2,
+      duration: 5 + Math.random() * 3
     };
   });
 
   return (
     <div className="position-relative vh-100 bg-light">
-      <h2 className="text-center pt-4">⚠️ Condiciones de {selectedCategory.title}</h2>
+      <h2 className="text-center pt-4"> Condiciones de {selectedCategory.title}</h2>
 
       {balloons.map((b) => (
         <Balloon
           key={b.idx}
           id={b.idx}
-          brand={selectedBrand.name}   // color según marca
+          brand={selectedBrand.name}
           x={b.x}
           delay={b.delay}
           duration={b.duration}

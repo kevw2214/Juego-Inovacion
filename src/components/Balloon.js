@@ -1,4 +1,3 @@
-// src/components/Balloon.js
 import React from 'react';
 import '../styles/animation.css';
 
@@ -11,15 +10,6 @@ const COLOR_MAP = {
   Microsoft: '#00A4EF',
 };
 
-/**
- * Balloon component without label text.
- * Props:
- * - id: unique identifier
- * - brand: string to pick color
- * - onPop: callback when clicked
- * - isPopped: boolean to hide popped balloons
- * - x: horizontal position in %
- */
 const Balloon = ({ id, brand, onPop, isPopped, x, delay, duration }) => {
   if (isPopped) return null;
 
@@ -29,6 +19,7 @@ const Balloon = ({ id, brand, onPop, isPopped, x, delay, duration }) => {
       style={{
         left: `${x}%`,
         backgroundColor: COLOR_MAP[brand] || '#666',
+        color: COLOR_MAP[brand] || '#666', 
         animation: `rise ${duration}s infinite`,
         animationDelay: `${delay}s`,
       }}

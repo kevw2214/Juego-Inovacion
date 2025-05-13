@@ -11,11 +11,11 @@ const SummaryPage = () => {
 
   return (
     <div className="summaryPage-container container py-4">
-      <h2 className="text-center display-3 mb-4">📋 Historial de Selecciones</h2>
+      <h2 className="text-center display-3 mb-4"> Historial de Selecciones</h2>
 
       <div className="text-center mt-4">
         <button onClick={handleReset} className="btn btn-danger btn-lg">
-          Reiniciar historial 🗑️
+          Reiniciar historial
         </button>
       </div>
       <br />
@@ -27,16 +27,16 @@ const SummaryPage = () => {
           {groups.map((g, i) => (
             <div key={i} className="col-md-6 mb-4">
               <div
-  className="card shadow"
-  style={{
-    backgroundColor: COLOR_MAP[g.brand] || '#f8f9fa',
-    minHeight: '250px', // <- aquí está el truco
-    color: 'white',
-    borderRadius: '15px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }}
+                className="card shadow"
+                style={{
+                  backgroundColor: COLOR_MAP[g.brand] || '#f8f9fa',
+                  minHeight: '250px',
+                  color: 'white',
+                  borderRadius: '15px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
               >
                 <div className="card-body text-center" style={{ fontSize: '1.8rem' }}>
                   <strong>Marca:</strong> {g.brand} <br />
