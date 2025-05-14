@@ -11,7 +11,7 @@ const SummaryPage = () => {
 
   return (
     <div className="summaryPage-container container py-4">
-      <h2 className="text-center display-3 mb-4"> Historial de Selecciones</h2>
+      <h2 className="text-center display-3 mb-4"> HISTORIAL DE SELECCIONES</h2>
 
       <div className="text-center mt-4">
         <button onClick={handleReset} className="btn btn-danger btn-lg">

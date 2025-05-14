@@ -40,7 +40,7 @@ const GamePage2 = ({ selectedBrand, setSelectedCategory }) => {
 
   return (
     <div className="position-relative vh-100 bg-light">
-      <h2 className="text-center pt-4"> Categorías de {selectedBrand.name}</h2>
+      <h2 className="text-center pt-4"> CATEGORIAS DE {selectedBrand.name}</h2>
 
       {balloons.map((b) => (
         <Balloon

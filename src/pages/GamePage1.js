@@ -39,7 +39,7 @@ const GamePage1 = ({ usedBrands, setSelectedBrand }) => {
 
   return (
     <div className="position-relative vh-100 bg-light">
-      <h2 className="text-center pt- fs-1">Elige una marca</h2>
+      <h2 className="text-center pt- fs-1">ELIGE UNA MARCA</h2>
 
       {balloons.map(b => (
         <Balloon
