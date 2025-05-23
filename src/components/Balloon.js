@@ -2,11 +2,8 @@ import React from 'react';
 import '../styles/animation.css';
 
 const COLOR_MAP = {
-  FEDEX: '#6A0DAD',
+  'LOGISTICS-CLUSTER': '#6A0DAD',
   SAMSUNG: '#1DB954',
-  DHL: '#FF8800',
-  PEPSICO: '#1428A0',
-  'GAS MONKEY GARAGE': '#F40009',
 };
 
 const Balloon = ({ id, brand, onPop, isPopped, x, delay, duration }) => {
